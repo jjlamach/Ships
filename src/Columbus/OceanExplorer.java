@@ -14,8 +14,6 @@ import javafx.stage.Stage;
 import javafx.event.*;
 /**
  * @author Julio Lama<br/>
- * Professor: Mona Rahimi<br/>
- * SE350: Assignment#2
  */
 public class OceanExplorer extends Application {
 	int[][] islandMap;
