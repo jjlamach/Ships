@@ -4,8 +4,6 @@ import java.util.Random;
 import java.awt.Point;
 /**
  * @author Julio Lama<br/>
- * Professor: Mona Rahimi<br/>
- * SE350: Assignment#2
  */
 public class Ship extends Observable {
 	Point coordinates;
