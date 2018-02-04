@@ -6,8 +6,6 @@ import java.util.Observer;
 import java.util.Random;
 /**
  * @author Julio Lama<br/>
- * Professor: Mona Rahimi<br/>
- * SE350: Assignment#2
  */
 public class PirateShip implements Observer {
 	Point coordinatesOfPirate;
