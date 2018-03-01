@@ -22,10 +22,7 @@ public class PirateShip implements Observer {
 		rand = new Random();
 		int rows = oceanGrid.dimension;
 		int cols = oceanGrid.dimension;
-		int randRows = rand.nextInt(rows - 1);
-		int randCols = rand.nextInt(cols - 1);
-		
-		
+
 		
 		int counter = 0;
 		while(counter < 2) {
