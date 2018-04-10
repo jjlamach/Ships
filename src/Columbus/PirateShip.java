@@ -5,18 +5,15 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
 /**
- * @author Julio Lama<br/>
+ * @author Julio Lama
  */
 public class PirateShip implements Observer {
 	Point coordinatesOfPirate;
 	Point coordinatesOfShip;
-	Random rand;		// to generate a random location in the grid.
+	Random rand;		
 	OceanMap oceanMap;
 	
-	/**
-	 * Places two pirate ships on the grid as long as it is not a 1 that is an island.
-	 * @param oceanGrid
-	 */
+
 	public PirateShip(OceanMap oceanGrid) {
 		this.oceanMap = oceanGrid;
 		rand = new Random();
@@ -28,16 +25,16 @@ public class PirateShip implements Observer {
 		while(counter < 2) {
 			int randRow = rand.nextInt(rows - 1);
 			int randCol = rand.nextInt(cols - 1);
-			// the pirate can be placed at a 0, which is ocean but not at a 1 because that is an island
+	
 			if(oceanGrid.getMap()[randRow][randCol] >= 0 && oceanGrid.getMap()[randRow][randCol] != 1) {
-				coordinatesOfPirate = new Point(randRow,randCol);	// get the location where it was placed
+				coordinatesOfPirate = new Point(randRow,randCol);
 			}
 			counter++;
 		}
 	}
 
 	/**
-	 * The pirates move when columbus's ship moves.
+	 * The pirates move when ship moves.
 	 */
 	public void update(Observable columbusShip, Object arg) {
 		if(columbusShip instanceof Ship) {
@@ -57,7 +54,7 @@ public class PirateShip implements Observer {
 	
 	
 	/**
-	 * Moves the pirate on the grid.<br/>
+	 * Moves the pirate on the grid.
 	 */
 	public void movePirates() {
 		if(coordinatesOfPirate.x - coordinatesOfShip.x < 0) {
