@@ -33,8 +33,8 @@ public class OceanExplorer extends Application {
 	Scene scene;
 
 
-	Ship ship;	// CC ship
-	PirateShip pirate, pirate2;	// pirate ships
+	Ship ship;
+	PirateShip pirate, pirate2;
 
 	/**
 	 * Main.
@@ -50,17 +50,17 @@ public class OceanExplorer extends Application {
 		oceanMap = new OceanMap(dimension,islandCount);
 		islandMap = oceanMap.getMap();
 
-		root = new AnchorPane();	// instantiate a Pane of type AnchorPane, also making it the root of the Scene.
+		root = new AnchorPane();
 		drawMap();	// draws the map on the Pane
 
-		// places columbus's ship on the map.
+
 		ship = new Ship(oceanMap);
 
 
 		// places a pirate ship on the grid.
 		pirate = new PirateShip(oceanMap);
 		pirate2 = new PirateShip(oceanMap);
-		ship.addObserver(pirate);	// registering the observers.
+		ship.addObserver(pirate);
 		ship.addObserver(pirate2);
 
 		// loads the images
@@ -78,7 +78,7 @@ public class OceanExplorer extends Application {
 	}
 
 	/**
-	 * Makes Christopher Columbus and the pirates move.
+	 * Makes the Ship and the pirates move.
 	 */
 	private void startSailing() {
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -112,7 +112,7 @@ public class OceanExplorer extends Application {
 				shipImageView.setX(ship.getShipLocation().x * scalingFactor);
 				shipImageView.setY(ship.getShipLocation().y * scalingFactor);	
 
-				// load the first and second pirate.
+	
 				pirateImageView.setX(pirate.getPirateLocation().x * scalingFactor);
 				pirateImageView.setY(pirate.getPirateLocation().y * scalingFactor);
 				pirateImageView2.setX(pirate2.getPirateLocation().x * scalingFactor);
@@ -122,9 +122,7 @@ public class OceanExplorer extends Application {
 		});
 	}
 
-	/**
-	 * Draws the map on the AnchorPane
-	 */
+	
 	private void drawMap() {
 		this.islandMap = this.oceanMap.getMap();
 		for(int x = 0; x < dimension; x++) {
@@ -138,9 +136,7 @@ public class OceanExplorer extends Application {
 	}
 
 
-	/**
-	 * Loads the ship image.
-	 */
+
 	public void loadShipImage() {
 		Image shipImage = new Image("File:src/Columbus/ship.png", 50, 50, true, true);
 		shipImageView = new ImageView(shipImage);
@@ -149,9 +145,7 @@ public class OceanExplorer extends Application {
 		root.getChildren().add(shipImageView);
 	}
 
-	/**
-	 * Loads the first pirate
-	 */
+
 	public void loadPirateImage(){
 		Image pirateShipImage = new Image("File:src/Columbus/pirateShip.png", 50, 50, true, true);
 		pirateImageView = new ImageView(pirateShipImage);
@@ -160,9 +154,7 @@ public class OceanExplorer extends Application {
 		root.getChildren().add(pirateImageView);
 	}
 
-	/**
-	 * Loads the second pirate.
-	 */
+
 	public void loadPirateImage2() {
 		Image pirateShipImage = new Image("File:src/Columbus/pirateShip.png", 50,50 , true, true);
 		pirateImageView2 = new ImageView(pirateShipImage);
@@ -171,9 +163,7 @@ public class OceanExplorer extends Application {
 		root.getChildren().add(pirateImageView2);
 	}
 
-	/**
-	 * Loads all the islands.
-	 */
+
 	public void islandImage() {    	
 		Image islandImage = new Image("File:src/Columbus/island2.jpg", 50, 50, true, true);
 		List<Point> islands = oceanMap.getIslands();
