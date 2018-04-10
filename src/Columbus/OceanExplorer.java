@@ -13,12 +13,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.event.*;
 /**
- * @author Julio Lama<br/>
+ * @author Julio Lama
  */
 public class OceanExplorer extends Application {
 	int[][] islandMap;
-	Pane root;	// root of the scene graph.
-	final int dimension = 10;	//10x10 grid.
+	Pane root;	
+	final int dimension = 10;	//10x10 grid
 	final int islandCount = 10;	// number of islands
 	final int scalingFactor = 50;
 
